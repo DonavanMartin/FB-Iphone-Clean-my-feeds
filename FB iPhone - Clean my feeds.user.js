@@ -20,61 +20,77 @@
 // As the posts get removed, the filler elements height need to be adjusted as well. Thats where the jitter happens.
 // As filler height goes from say 5000px to 500px in a second when we update it ourselves.
 // After scrolling for a while, they just keep spamming suggested posts and ads. So you will often see the "Loading more posts" element.
-function ready(callback) {
-  // in case the document is already rendered
-  if (document.readyState != "loading") {
-    console.log("document is already rendered");
-    callback();
-  }
-  // modern browsers
-  else if (document.addEventListener) {
-    console.log("modern browsers");
-    document.addEventListener("DOMContentLoaded", callback);
-  }
-  // IE <= 8
-  else {
-    console.log("IE <= 8");
-    document.attachEvent("onreadystatechange", function () {
-      if (document.readyState == "complete") callback();
-    });
-  }
-}
 
 // this version of fb does not update navigator.lang on language change
 // navigator.langs contain all of your preset languages. So we need to loop through it
-
-console.log(navigator.languages);
-const getLabels = (obj) => navigator.languages.map((lang) => obj[lang]).flat();
+var languages = [...navigator.languages]
+languages.push(navigator.language.split('-')[0])
+const getLabels = (obj) => languages.map((lang) => obj[lang]).flat().filter(item => item);
 
 const placeholderMsg = getLabels({
-  "fr-CA": "Removed",
-  en: "Removed",
-  bn: "বাতিল",
-})[0];
-// To be fixed later
+  en: 'Removed',
+  fr: 'Supprimé',
+  bn: 'বাতিল',
+});
 
 // Suggestions
 const suggested = getLabels({
-  "fr-CA": "Suggestions",
-  en: "Suggestions",
-  bn: "আপনার জন্য প্রস্তাবিত",
+  en: 'Suggestions / Recommendations',
+  pt: 'Sugestões / Recomendações',
+  de: 'Vorschläge / Empfehlungen',
+  fr: 'Suggestions',
+  es: 'Sugerencias / Recomendaciones',
+  cs: 'Návrhy / Doporučení',
+  vi: 'Đề xuất / Khuyến nghị',
+  it: 'Suggerimenti / Raccomandazioni',
+  lv: 'Ieteikumi',
+  pl: 'Sugestie / Zalecenia',
+  nl: 'Suggesties / Aanbevelingen',
+  he: 'הצעות / המלצות',
+  ar: 'الاقتراحات / التوصيات',
+  id: 'Saran / Rekomendasi',
+  'zh-Hans': '建议',
+  'zh-Hant': '建議/推薦',
+  ja: '提案/推奨事項',
+  fi: 'Ehdotuksia / Suosituksia',
+  tr: 'Öneriler',
+  el: 'Προτάσεις / Συστάσεις',
+  ru: 'Предложения / Рекомендации',
 });
 
 // Sponsored
 const sponsored = getLabels({
-  "fr-CA": "Sponsorisée",
-  fr: "Sponsorisée",
-  bn: "স্পনসর্ড",
+  en: 'Sponsored',
+  pt: 'Patrocinado',
+  de: 'Gesponsert',
+  fr: 'Sponsorisée',
+  es: 'Publicidad',
+  cs: 'Sponzorováno',
+  vi: 'Được tài trợ',
+  it: 'Sponsorizzato',
+  lv: 'Apmaksāta reklāma',
+  pl: 'Sponsorowane',
+  nl: 'Gesponsord',
+  he: 'ממומן',
+  ar: 'مُموَّل',
+  id: 'Bersponsor',
+  'zh-Hans': '赞助内容',
+  'zh-Hant': '贊助',
+  ja: '広告',
+  fi: 'Sponsoroitu',
+  tr: 'Sponsorlu',
+  el: 'Χορηγούμενη',
+  ru: 'Реклама',
 });
 
 // Uncategorized
 const unCategorized = getLabels({
-  "fr-CA": ["Join", "Follow"],
   en: ["Join", "Follow"],
+  fr: ["Joindre", "Suivis"],
   bn: ["ফলো করুন", "যোগ দিন"],
 });
 
-const devMode = false;
+const devMode = true;
 const showPlaceholder = true;
 var whiteCount = 0;
 var blackCount = 0;
