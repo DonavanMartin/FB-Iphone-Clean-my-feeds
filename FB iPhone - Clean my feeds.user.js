@@ -28,34 +28,48 @@ languages.push(navigator.language.split('-')[0])
 const getLabels = (obj) => languages.map((lang) => obj[lang]).flat().filter(item => item);
 
 const placeholderMsg = getLabels({
-  en: 'Removed',
-  fr: 'Supprimé',
-  bn: 'বাতিল',
+  en: 'Post hidden',
+  pt: 'Postagens ocultas',
+  de: 'Beiträge versteckt',
+  fr: 'Post bloqué',
+  es: 'Publicaciones ocultas',
+  cs: 'Příspěvků skrytých',
+  vi: 'Bài viết ẩn',
+  it: 'Post nascosti',
+  lv: 'Ziņas ir paslēptas',
+  pl: 'Posty ukryte',
+  nl: 'Posts verborgen',
+  id: 'Postingan disembunyikan',
+  'zh-Hans': '个帖子已隐藏',
+  'zh-Hant': '個貼文已隱藏',
+  ja: '件の投稿が非表示',
+  fi: 'Viestiä piilotettu',
+  tr: 'Gönderi gizlendi',
+  el: 'δημοσιεύσεις κρυμμένες',
+  ru: 'постов скрыто',
 });
 
 // Suggestions
 const suggested = getLabels({
-  en: 'Suggestions / Recommendations',
-  pt: 'Sugestões / Recomendações',
-  de: 'Vorschläge / Empfehlungen',
-  fr: 'Suggestions',
-  es: 'Sugerencias / Recomendaciones',
-  cs: 'Návrhy / Doporučení',
-  vi: 'Đề xuất / Khuyến nghị',
-  it: 'Suggerimenti / Raccomandazioni',
+  en: ['Suggestions','Recommendations'],
+  pt: ['Sugestões','Recomendações'],
+  de: ['Vorschläge','Empfehlungen'],
+  fr: ['Suggestions','Recommandations'],
+  es: ['Sugerencias','Recomendaciones'],
+  cs: ['Návrhy','Doporučení'],
+  vi: ['Đề xuất','Khuyến nghị'],
+  it: ['Suggerimenti','Raccomandazioni'],
   lv: 'Ieteikumi',
-  pl: 'Sugestie / Zalecenia',
-  nl: 'Suggesties / Aanbevelingen',
-  he: 'הצעות / המלצות',
-  ar: 'الاقتراحات / التوصيات',
-  id: 'Saran / Rekomendasi',
+  pl: ['Sugestie','Zalecenia'],
+  nl: ['Suggesties','Aanbevelingen'],
+  id: ['Saran','Rekomendasi'],
   'zh-Hans': '建议',
   'zh-Hant': '建議/推薦',
   ja: '提案/推奨事項',
-  fi: 'Ehdotuksia / Suosituksia',
+  fi: ['Ehdotuksia','Suosituksia'],
   tr: 'Öneriler',
-  el: 'Προτάσεις / Συστάσεις',
-  ru: 'Предложения / Рекомендации',
+  el: ['Προτάσεις','Συστάσεις'],
+  ru: ['Предложения','Рекомендации'],
 });
 
 // Sponsored
@@ -71,8 +85,6 @@ const sponsored = getLabels({
   lv: 'Apmaksāta reklāma',
   pl: 'Sponsorowane',
   nl: 'Gesponsord',
-  he: 'ממומן',
-  ar: 'مُموَّل',
   id: 'Bersponsor',
   'zh-Hans': '赞助内容',
   'zh-Hant': '贊助',
@@ -84,11 +96,30 @@ const sponsored = getLabels({
 });
 
 // Uncategorized
-const unCategorized = getLabels({
+/*const unCategorized = getLabels({
   en: ["Join", "Follow"],
-  fr: ["Joindre", "Suivis"],
+  fr: ["Joindre", "Suivre"],
   bn: ["ফলো করুন", "যোগ দিন"],
-});
+  pt: 'Seguir',
+  de: 'Folgen',
+  es: 'Seguir',
+  cs: 'Sledovat',
+  vi: 'Theo dõi',
+  it: 'Segui',
+  lv: 'Sekot',
+  pl: 'Obserwuj',
+  nl: 'Volgen',
+  he: 'עקוב',
+  ar: 'تابع',
+  id: 'Ikuti',
+  'zh-Hans': '关注',
+  'zh-Hant': '追蹤',
+  ja: 'フォロー',
+  fi: 'Seuraa',
+  tr: 'Takip Et',
+  el: 'Ακολούθησε',
+  ru: 'Подписаться',
+});*/
 
 const devMode = true;
 const showPlaceholder = true;
@@ -242,11 +273,11 @@ function findConvicts(callback) {
         if (!suspect) {
           const span = element.querySelector("span.f2:not(.a)");
 
-          if (span && unCategorized.some((str) => span.textContent === str)) {
-            suspect = true;
-            reason = span.textContent;
-            raw = span.textContent;
-          }
+          //if (span && unCategorized.some((str) => span.textContent === str)) {
+          //  suspect = true;
+          //  reason = span.textContent;
+          //  raw = span.textContent;
+          //}
         }
 
         if (suspect) {
