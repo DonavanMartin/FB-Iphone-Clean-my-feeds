@@ -30,24 +30,24 @@ Hides Suggested and Unwanted posts from **Facebook Iphone** feed. Get a clean Ne
 
 ### Languages Supported
 
-pt: Portuguese
-de: German
-fr: French
-es: Spanish
-cs: Czech
-vi: Vietnamese
-it: Italian
-lv: Latvian
-pl: Polish
-nl: Dutch
-id: Indonesian
-zh-Hans: Chinese (Simplified)
-zh-Hant: Chinese (Traditional)
-ja: Japanese
-fi: Finnish
-tr: Turkish
-el: Greek
-ru: Russian
+- Portuguese
+- German
+- French
+- Spanish
+- Czech
+- Vietnamese
+- Italian
+- Latvian
+- Polish
+- Dutch
+- Indonesian
+- Chinese (Simplified)
+- Chinese (Traditional)
+- Japanese
+- Finnish
+- Turkish
+- Greek
+- Russian
 
 ### How it works
 
