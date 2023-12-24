@@ -15,15 +15,11 @@ Hides Suggested and Unwanted posts from **Facebook Iphone** feed. Get a clean Ne
 
 **⚠️ Works on Iphone Only**
 
-<details>
-<summary>Table of contents</summary>
+### How to use
 
-- [Removes](#removes)
-- [Languages Supported](#languages-supported)
-- [How to use](#how-to-use)
-- [How it works](#how-it-works)
-
-</details>
+1. Download and install Userscripts on App Store https://apps.apple.com/xk/app/userscripts/id1463298887?platform=iphone
+2. Follow Userscripts installation guide.
+3. Inject "FB Iphone - Clean my feeds.user.js"
 
 ### Removes
 
@@ -35,12 +31,6 @@ Hides Suggested and Unwanted posts from **Facebook Iphone** feed. Get a clean Ne
 ### Languages Supported
 
 - French
-
-### How to use
-
-1. Download and install Userscripts on App Store https://apps.apple.com/xk/app/userscripts/id1463298887?platform=iphone
-2. Follow Userscripts installation guide.
-3. Inject "FB Iphone - Clean my feeds.user.js"
 
 ### How it works
 
