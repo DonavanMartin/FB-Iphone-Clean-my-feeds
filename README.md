@@ -19,7 +19,7 @@ Hides Suggested and Unwanted posts from **Facebook Iphone** feed. Get a clean Ne
 
 1. Download and install Userscripts on App Store https://apps.apple.com/xk/app/userscripts/id1463298887?platform=iphone
 2. Follow Userscripts installation guide.
-3. Inject "FB Iphone - Clean my feeds.user.js"
+3. Add "FB Iphone - Clean my feeds.user.js" file to Userscripts folder.
 
 ### Removes
 
