@@ -30,6 +30,7 @@ Hides Suggested and Unwanted posts from **Facebook Iphone** feed. Get a clean Ne
 
 ### Languages Supported
 
+- English
 - French
 
 ### How it works
