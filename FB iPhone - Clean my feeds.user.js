@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name        FB Mobile - Clean my feeds
+// @name        FB Iphone - Clean my feeds
 // @namespace   Violentmonkey Scripts
 // @match       https://m.facebook.com/*
 // @version     0.30
